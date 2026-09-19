@@ -72,7 +72,7 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
                       : 'hover:scale-105 hover:shadow-md'
                   }`}
                 >
-                  <div className="w-full h-full rounded-full overflow-hidden bg-[#FFF5F8] border-2 border-[#F8BBD0] flex items-center justify-center relative">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-[#FFF5F8] border border-[#F8BBD0] flex items-center justify-center relative shadow-xs">
                     
                     {cat.isOfferBadge ? (
                       // Special Offers Circle with % sign matching reference
@@ -80,12 +80,12 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
                         <Percent className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2.5]" />
                       </div>
                     ) : (
-                      // Category image with contain behavior so packaging is never sliced
-                      <div className="w-full h-full p-2 flex items-center justify-center">
+                      // Category transparent product cutout
+                      <div className="w-full h-full p-1.5 sm:p-2 flex items-center justify-center">
                         <img
                           src={cat.image}
                           alt={cat.name}
-                          className="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_2px_6px_rgba(214,28,124,0.08)]"
                           loading="lazy"
                           onError={(e) => {
                             e.currentTarget.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=85';

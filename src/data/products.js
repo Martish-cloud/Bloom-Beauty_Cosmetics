@@ -218,7 +218,7 @@ export const PRODUCTS = [
     rating: 4.5,
     reviewCount: '1.6k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85',
+    image: '/lakme-foundation.png',
     description: 'Feather-light perfecting fluid mousse foundation infused with SPF 20 and argan oil extracts that melts seamlessly to give a radiant satin second-skin look.',
     benefits: [
       'Air-whipped breathable mousse texture',

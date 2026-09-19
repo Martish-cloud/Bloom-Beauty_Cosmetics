@@ -76,38 +76,13 @@ export default function Header({
                 onSelectCategory('all');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="flex items-center gap-2.5 group cursor-pointer"
+              className="flex items-center gap-2 group cursor-pointer"
             >
-              {/* Floral Logo Icon */}
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-[#D61C7C] to-[#E84E9F] flex items-center justify-center text-white shadow-md shadow-[#D61C7C]/25 group-hover:scale-105 transition-transform duration-300">
-                <svg 
-                  className="w-5 h-5 sm:w-6 sm:h-6" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="white" fillOpacity="0.3" />
-                  <circle cx="12" cy="9" r="3" fill="white" />
-                  <path d="M12 2v20" stroke="white" strokeWidth="1.5" />
-                  <path d="M2 12h20" stroke="white" strokeWidth="1.5" />
-                </svg>
-              </div>
-
-              {/* Brand Typography */}
-              <div className="flex flex-col">
-                <span className="font-serif text-xl sm:text-2xl font-bold tracking-[0.08em] text-[#751437] group-hover:text-[#D61C7C] transition-colors leading-none">
-                  BLOOM
-                </span>
-                <span className="font-serif text-lg sm:text-xl font-medium tracking-[0.14em] text-[#D61C7C] leading-none mt-0.5">
-                  BEAUTY
-                </span>
-                <span className="text-[7.5px] sm:text-[8px] font-semibold tracking-[0.28em] text-stone-400 mt-1 uppercase">
-                  BEAUTY LIVES HERE
-                </span>
-              </div>
+              <img
+                src="/bloom-logo-transparent.png"
+                alt="Bloom Beauty - Beauty Lives Here"
+                className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-102"
+              />
             </a>
           </div>
 

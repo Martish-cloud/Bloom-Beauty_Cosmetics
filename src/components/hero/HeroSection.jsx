@@ -1,163 +1,111 @@
-import React from 'react';
-import { ArrowRight, ShieldCheck, Truck, RotateCcw, Sparkles, Heart } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, ShieldCheck, Truck, RotateCcw } from 'lucide-react';
 
 export default function HeroSection({ onShopNowClick }) {
+  const [activeTrustTooltip, setActiveTrustTooltip] = useState(null);
+
+  const handleTrustClick = (type, message) => {
+    setActiveTrustTooltip(activeTrustTooltip === type ? null : type);
+  };
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#FFF5F8] via-[#FDF0F5] to-[#FFF0F5] border-b border-[#FCE4F0]/60">
+    <section className="relative w-full bg-[#FFF5F8] border-b border-[#FCE4F0]/80 overflow-hidden select-none">
       
-      {/* Decorative background ambient blobs */}
-      <div className="absolute top-0 right-10 w-96 h-96 bg-[#F8BBD0]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 left-10 w-80 h-80 bg-[#D61C7C]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Maximum fidelity wrapper */}
+      <div className="max-w-[1480px] mx-auto relative">
+        
+        {/* Main Graphic Banner (1024x200 original aspect ratio 5.12:1) */}
+        <div className="relative w-full aspect-[1024/200] min-h-[160px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[260px] xl:min-h-[290px] overflow-hidden">
+          <img
+            src="/hero-banner.png"
+            alt="Reveal Your Natural Beauty — Bloom Beauty Hero"
+            className="w-full h-full object-cover object-center"
+            fetchPriority="high"
+            loading="eager"
+          />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
-          
-          {/* Left Text Column (approx 5 cols on lg) */}
-          <div className="lg:col-span-5 flex flex-col justify-center z-10 text-left">
-            
-            {/* Small uppercase tag */}
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#8E1843] uppercase">
-                NATURAL BEAUTY. REAL YOU.
-              </span>
-            </div>
+          {/* Interactive "Shop Now →" Hotspot Overlay */}
+          <button
+            onClick={onShopNowClick}
+            aria-label="Shop Now"
+            title="Shop Now"
+            className="absolute z-20 cursor-pointer rounded-full transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-[#D61C7C] hover:ring-2 hover:ring-[#D61C7C]/60 hover:bg-[#D61C7C]/10"
+            style={{
+              left: '6.2%',
+              top: '71.5%',
+              width: '12%',
+              height: '18%'
+            }}
+          >
+            {/* Subtle glow highlight on hover */}
+            <span className="sr-only">Shop Now</span>
+            <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/15 transition-colors" />
+          </button>
 
-            {/* Main Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-[#4A0E22] tracking-tight leading-[1.08] mb-4">
-              Reveal Your<br />
-              <span className="italic font-normal text-[#D61C7C]">Natural Beauty</span>
-            </h1>
+          {/* Interactive Trust Point 1: 100% Original (approx left: 16% to 23%, top: 82% to 98%) */}
+          <button
+            onClick={() => handleTrustClick('original', '100% Original: Directly sourced from verified global beauty brands')}
+            className="absolute z-20 cursor-pointer rounded-lg hover:bg-black/5 transition-colors focus:outline-none"
+            style={{
+              left: '16%',
+              top: '80%',
+              width: '8%',
+              height: '18%'
+            }}
+            title="100% Original Products"
+          >
+            <span className="sr-only">100% Original Authentic Products</span>
+          </button>
 
-            {/* Subheading */}
-            <p className="text-base sm:text-lg font-medium text-[#751437] tracking-wide mb-3">
-              Skincare. Makeup. Selfcare.
-            </p>
+          {/* Interactive Trust Point 2: Free Shipping (approx left: 24.5% to 33.5%, top: 82% to 98%) */}
+          <button
+            onClick={() => handleTrustClick('shipping', 'Free Shipping: Available on all orders above ₹499 across India')}
+            className="absolute z-20 cursor-pointer rounded-lg hover:bg-black/5 transition-colors focus:outline-none"
+            style={{
+              left: '24.5%',
+              top: '80%',
+              width: '9%',
+              height: '18%'
+            }}
+            title="Free Shipping on orders above ₹499"
+          >
+            <span className="sr-only">Free Shipping on Orders Above ₹499</span>
+          </button>
 
-            {/* Description */}
-            <p className="text-sm sm:text-[15px] text-stone-600 leading-relaxed max-w-md mb-8">
-              Discover premium beauty essentials for glowing skin, confident you. Because you deserve the best.
-            </p>
-
-            {/* CTA Button */}
-            <div className="mb-10">
-              <button
-                onClick={onShopNowClick}
-                className="inline-flex items-center gap-3 bg-[#D61C7C] hover:bg-[#BF156C] text-white text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-[#D61C7C]/25 hover:shadow-xl hover:shadow-[#D61C7C]/30 hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer"
-              >
-                <span>Shop Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-
-            {/* Trust points row */}
-            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-[#F8BBD0]/50 max-w-lg">
-              
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full bg-[#FFF0F5] border border-[#F8BBD0] flex items-center justify-center shrink-0 text-[#D61C7C] mt-0.5">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-stone-900 leading-tight">100% Original</h4>
-                  <p className="text-[10px] text-stone-500 mt-0.5 leading-tight">Authentic Products</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full bg-[#FFF0F5] border border-[#F8BBD0] flex items-center justify-center shrink-0 text-[#D61C7C] mt-0.5">
-                  <Truck className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-stone-900 leading-tight">Free Shipping</h4>
-                  <p className="text-[10px] text-stone-500 mt-0.5 leading-tight">On Orders Above ₹499</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full bg-[#FFF0F5] border border-[#F8BBD0] flex items-center justify-center shrink-0 text-[#D61C7C] mt-0.5">
-                  <RotateCcw className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-stone-900 leading-tight">Easy Returns</h4>
-                  <p className="text-[10px] text-stone-500 mt-0.5 leading-tight">Hassle Free</p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Right Visual / Model Column with Handwritten Notes (approx 7 cols on lg) */}
-          <div className="lg:col-span-7 relative flex items-center justify-center">
-            
-            {/* Handwritten overlay 1: Glow Confident Be You ♡ (Left of model) */}
-            <div className="absolute left-0 sm:left-4 top-1/4 z-20 pointer-events-none transform -rotate-6 hidden sm:block">
-              <div className="text-center font-script text-3xl sm:text-4xl text-[#5C122C] leading-none tracking-wide select-none drop-shadow-sm">
-                <p>Glow</p>
-                <p>Confident</p>
-                <p className="flex items-center justify-center gap-1">
-                  Be You
-                </p>
-                <span className="text-2xl text-[#D61C7C] inline-block mt-1">♡</span>
-              </div>
-            </div>
-
-            {/* Handwritten overlay 2: Selfcare Looks Good On You ♡ (Top right) */}
-            <div className="absolute right-2 sm:right-6 top-6 sm:top-10 z-20 pointer-events-none transform rotate-3 hidden sm:block">
-              <div className="text-center font-script text-2xl sm:text-3xl text-[#5C122C] leading-tight select-none drop-shadow-sm">
-                <p>Selfcare</p>
-                <p>Looks Good</p>
-                <p>On You</p>
-                <span className="text-2xl text-[#D61C7C] inline-block mt-0.5">♡</span>
-              </div>
-            </div>
-
-            {/* Model visual container with soft aura */}
-            <div className="relative w-full max-w-md lg:max-w-lg">
-              
-              {/* Soft pink gradient backdrop circle */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#FAD1DF] via-[#FCE7EE] to-[#FFF0F5] rounded-full filter blur-xl scale-95 opacity-80" />
-
-              {/* Main Model Photography */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#D61C7C]/15 border-4 border-white aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] bg-[#FFF0F5]">
-                <img
-                  src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=1000&q=85"
-                  alt="Radiant beauty model holding skincare product with glowing skin"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-
-                {/* Subtle soft gradient fade at base */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#4A0E22]/30 via-transparent to-transparent pointer-events-none" />
-
-                {/* Floating beauty badge */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-[#FCE4F0] flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-full bg-[#FFF0F5] flex items-center justify-center text-[#D61C7C]">
-                      <Sparkles className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-stone-900">Award-Winning Radiance</p>
-                      <p className="text-[10px] text-stone-500">Formulated with botanical ceramides</p>
-                    </div>
-                  </div>
-                  <span className="text-xs font-semibold text-[#D61C7C] bg-[#FFF0F5] px-2.5 py-1 rounded-full">
-                    ★ 4.9
-                  </span>
-                </div>
-              </div>
-
-              {/* Decorative mini flowers / floating petal badges */}
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full bg-white shadow-lg border border-[#F8BBD0] flex items-center justify-center p-2 transform rotate-12">
-                <span className="text-2xl">🌸</span>
-              </div>
-
-            </div>
-
-          </div>
+          {/* Interactive Trust Point 3: Easy Returns (approx left: 34.5% to 42%, top: 82% to 98%) */}
+          <button
+            onClick={() => handleTrustClick('returns', 'Easy Returns: 7-day hassle-free return and exchange policy')}
+            className="absolute z-20 cursor-pointer rounded-lg hover:bg-black/5 transition-colors focus:outline-none"
+            style={{
+              left: '34.5%',
+              top: '80%',
+              width: '7.5%',
+              height: '18%'
+            }}
+            title="Easy Returns Hassle Free"
+          >
+            <span className="sr-only">Easy Returns Hassle Free</span>
+          </button>
 
         </div>
+
+        {/* Mobile Quick Action Bar (shown on small phones where banner text might be small) */}
+        <div className="sm:hidden px-4 py-3 bg-[#FFF0F5] border-t border-[#F8BBD0]/60 flex items-center justify-between gap-3">
+          <div className="text-left">
+            <p className="text-xs font-serif font-bold text-[#751437]">Reveal Your Natural Beauty</p>
+            <p className="text-[10px] text-stone-500">Skincare • Makeup • Selfcare</p>
+          </div>
+          <button
+            onClick={onShopNowClick}
+            className="bg-[#D61C7C] text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5 shrink-0"
+          >
+            <span>Shop Now</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
       </div>
+
     </section>
   );
 }

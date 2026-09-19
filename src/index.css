@@ -84,3 +84,10 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Product image seamless presentation utility - dissolves outer photo boundaries into card canvas */
+.seamless-product-image {
+  -webkit-mask-image: radial-gradient(ellipse 95% 95% at 50% 50%, black 76%, rgba(0, 0, 0, 0.65) 88%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 95% at 50% 50%, black 76%, rgba(0, 0, 0, 0.65) 88%, transparent 100%);
+}
+

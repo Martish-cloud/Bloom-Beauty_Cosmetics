@@ -70,15 +70,18 @@ export default function ProductDetailModal({ product, isOpen, onClose }) {
         </button>
 
         {/* Left Column: Image */}
-        <div className="md:w-1/2 bg-[#FFF5F8] p-6 sm:p-8 flex items-center justify-center relative">
-          <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-md bg-white border border-[#F8BBD0]/60">
+        <div className="md:w-1/2 bg-gradient-to-br from-[#FFFDFE] via-[#FFF5F8] to-[#FCE7F0]/40 p-6 sm:p-8 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-[#FCE4F0]">
+          {/* Soft Organic Ambient Halo behind the product */}
+          <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-[#FCE7F0]/70 via-[#FFF0F5]/50 to-transparent blur-2xl pointer-events-none" />
+
+          <div className="relative w-full aspect-square flex items-center justify-center">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover object-center"
+              className="relative z-1 w-full h-full object-contain object-center drop-shadow-[0_8px_24px_rgba(214,28,124,0.1)] seamless-product-image"
             />
             {product.discount && (
-              <span className="absolute top-3 left-3 bg-[#D61C7C] text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-xs">
+              <span className="absolute top-2 left-2 z-10 bg-[#FFF0F5] border border-[#F8BBD0] text-[#D61C7C] text-xs font-bold px-2.5 py-1 rounded-lg shadow-xs">
                 {product.discount}
               </span>
             )}

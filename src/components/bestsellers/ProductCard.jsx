@@ -38,15 +38,17 @@ export default function ProductCard({ product, onQuickView }) {
   return (
     <div
       onClick={() => onQuickView(product)}
-      className="group bg-white rounded-2xl border border-[#F8BBD0]/60 hover:border-[#D61C7C]/60 p-2.5 sm:p-3 flex flex-col transition-all duration-300 hover:shadow-soft-hover hover:-translate-y-1 cursor-pointer relative w-full"
+      className="group bg-gradient-to-b from-[#FFFDFE] to-[#FFF8FA] rounded-2xl border border-[#FCE4F0] hover:border-[#D61C7C]/50 p-2.5 sm:p-3 flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_-6px_rgba(214,28,124,0.12)] hover:-translate-y-1 cursor-pointer relative w-full"
     >
-      {/* Top Product Image Container (Consistent 1:1 Aspect Ratio with Subtle Padding) */}
-      <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#FFF5F8] mb-2 p-2 flex items-center justify-center">
-        
+      {/* Top Product Image Container (Seamless & Naturally Integrated) */}
+      <div className="relative w-full aspect-square mb-2.5 flex items-center justify-center">
+        {/* Soft Organic Ambient Glow behind the product (circular, non-boxy) */}
+        <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-[#FCE7F0]/60 via-[#FFF0F5]/40 to-transparent blur-xl pointer-events-none" />
+
         {/* Wishlist toggle heart button */}
         <button
           onClick={handleToggleWishlist}
-          className="absolute top-1.5 right-1.5 z-10 w-7 h-7 rounded-full bg-white/95 backdrop-blur-xs shadow-xs flex items-center justify-center text-stone-400 hover:text-[#D61C7C] hover:scale-110 transition-all cursor-pointer"
+          className="absolute top-1 right-1 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-xs shadow-xs flex items-center justify-center text-stone-400 hover:text-[#D61C7C] hover:scale-110 transition-all cursor-pointer border border-[#FCE4F0]/60"
           aria-label={isFavorited ? 'Remove from wishlist' : 'Add to wishlist'}
         >
           <Heart
@@ -58,16 +60,16 @@ export default function ProductCard({ product, onQuickView }) {
 
         {/* Discount badge */}
         {product.discount && (
-          <span className="absolute top-1.5 left-1.5 z-10 bg-[#FFF0F5] border border-[#F8BBD0] text-[#D61C7C] text-[9.5px] font-bold px-1.5 py-0.5 rounded-md shadow-xs">
+          <span className="absolute top-1 left-1 z-10 bg-[#FFF0F5] border border-[#F8BBD0] text-[#D61C7C] text-[9.5px] font-bold px-1.5 py-0.5 rounded-md shadow-xs">
             {product.discount}
           </span>
         )}
 
-        {/* Product Image - object-contain so bottles, tubes, labels are 100% visible */}
+        {/* Product Image - object-contain so bottles, tubes, labels are 100% visible, seamless-product-image dissolves photo edges */}
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-300"
+          className="relative z-1 w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_4px_12px_rgba(214,28,124,0.06)] seamless-product-image"
           loading="lazy"
           onError={(e) => {
             e.currentTarget.src = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=85';
@@ -75,8 +77,8 @@ export default function ProductCard({ product, onQuickView }) {
         />
 
         {/* Quick View hover overlay on desktop */}
-        <div className="absolute inset-0 bg-stone-900/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-          <span className="bg-white/95 text-stone-800 text-[10.5px] font-semibold px-2 py-0.5 rounded-full shadow-md flex items-center gap-1">
+        <div className="absolute inset-0 bg-[#4A0E22]/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none rounded-xl">
+          <span className="bg-white/95 text-stone-800 text-[10.5px] font-semibold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 border border-[#FCE4F0]">
             <Eye className="w-3 h-3 text-[#D61C7C]" />
             Quick View
           </span>

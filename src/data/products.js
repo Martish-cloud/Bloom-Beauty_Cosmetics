@@ -1,5 +1,5 @@
 export const PRODUCTS = [
-  // 6 Core Bestsellers from Reference Image
+  // 6 Core Bestsellers from Reference Image - 800px High-Definition Tested Photography
   {
     id: 'prod-1',
     brand: 'Minimalist',
@@ -11,7 +11,7 @@ export const PRODUCTS = [
     rating: 4.7,
     reviewCount: '2.1k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=85',
     description: 'A pure, high-potency 10% Niacinamide (Vitamin B3) serum formulated with Zinc PCA to balance sebum activity, minimize open pores, reduce redness, and improve skin texture.',
     benefits: [
       'Reduces acne marks & hyperpigmentation',
@@ -34,7 +34,7 @@ export const PRODUCTS = [
     rating: 4.5,
     reviewCount: '1.8k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=85',
     description: 'A lightweight perfecting primer that blurs pores, evens skin tone, and creates a silky smooth matte canvas that holds makeup fresh and crease-free for up to 16 hours.',
     benefits: [
       'Seamless pore-blurring matte finish',
@@ -57,7 +57,7 @@ export const PRODUCTS = [
     rating: 4.6,
     reviewCount: '3.2k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=800&q=85',
     description: 'A hydration-support formula featuring multi-depth Hyaluronic Acid combined with Vitamin B5 to deliver intense multi-depth hydration and plump skin for a supple, dewy glow.',
     benefits: [
       'Multi-depth hydration across dermal layers',
@@ -80,7 +80,7 @@ export const PRODUCTS = [
     rating: 4.4,
     reviewCount: '2.8k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&w=800&q=85',
     description: 'Iconic liquid foundation with micro-powders that control shine and blur pores for a natural, seamless matte finish. Available in shades tailor-made for warm & neutral undertones.',
     benefits: [
       'Natural seamless matte finish',
@@ -103,7 +103,7 @@ export const PRODUCTS = [
     rating: 4.5,
     reviewCount: '1.9k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85',
     description: 'A glow-boosting sorbet moisturizer loaded with Kakadu Plum, Ethyl Ascorbic Acid, and Sicilian Blood Orange to illuminate dull complexion, fade dark spots, and seal in lasting hydration.',
     benefits: [
       'Boosts natural skin radiance & evens skin tone',
@@ -126,7 +126,7 @@ export const PRODUCTS = [
     rating: 4.4,
     reviewCount: '2.4k',
     isBestseller: true,
-    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=85',
     description: 'A potent blend of Onion Seed Oil, Redensyl, and natural carrier oils rich in sulfur and potassium to arrest hair fall, stimulate dormant follicles, and impart high-gloss shine.',
     benefits: [
       'Reduces hair fall & accelerates new hair growth',
@@ -151,7 +151,7 @@ export const PRODUCTS = [
     rating: 4.9,
     reviewCount: '950',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85',
     description: 'An intoxicating fragrance featuring Bulgarian damask rose petals, velvet pink peppercorn, luminous amber, and soft Madagascar vanilla musk.',
     benefits: [
       'Long-lasting sillage for over 12 hours',
@@ -173,7 +173,7 @@ export const PRODUCTS = [
     rating: 4.8,
     reviewCount: '1.4k',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=85',
     description: 'Feather-light leave-in gloss serum enriched with cold-pressed Japanese Camellia seed oil and keratin peptides to tame frizz and protect against heat styling up to 230°C.',
     benefits: [
       'Instant mirror-like glass hair shine',
@@ -195,7 +195,7 @@ export const PRODUCTS = [
     rating: 4.7,
     reviewCount: '1.7k',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=85',
     description: 'Ultra-pigmented, petal-soft matte lipstick enriched with French hyaluronic spheres and jojoba wax for comfortable weightless wear that never dries out lips.',
     benefits: [
       'Transfer-resistant for up to 10 hours',
@@ -217,7 +217,7 @@ export const PRODUCTS = [
     rating: 4.9,
     reviewCount: '2.6k',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85',
     description: 'A comforting moisture barrier cream packed with 5 essential ceramides, oat beta-glucan, and colloidal oatmeal to calm stressed, sensitized skin.',
     benefits: [
       'Clinically repairs damaged skin barrier in 3 days',
@@ -239,7 +239,7 @@ export const PRODUCTS = [
     rating: 4.6,
     reviewCount: '820',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1512290900672-1f5076ebf3df?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1512290900672-1f5076ebf3df?auto=format&fit=crop&w=800&q=85',
     description: 'Biodegradable bamboo microfiber sheet masks soaked in fresh botanical essence with damask rosewater, peony extracts, and trehalose.',
     benefits: [
       'Instant 15-minute glass glow recharge',
@@ -261,7 +261,7 @@ export const PRODUCTS = [
     rating: 4.8,
     reviewCount: '1.1k',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85',
     description: 'Air-whipped decadent body soufflé infused with raw organic African shea butter, sweet almond oil, and warm floral vanilla notes.',
     benefits: [
       '48-hour continuous moisture protection',

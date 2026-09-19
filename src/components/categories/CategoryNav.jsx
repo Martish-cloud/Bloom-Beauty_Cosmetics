@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { CATEGORIES } from '../../data/categories';
 import { Percent, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function CategoryNav({ activeCategory, onSelectCategory }) {
-  const scrollContainerRef = React.useRef(null);
+  const scrollContainerRef = useRef(null);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -240 : 240;
+      const scrollAmount = direction === 'left' ? -260 : 260;
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -21,30 +21,31 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
   };
 
   return (
-    <section className="py-8 bg-white border-b border-[#FCE4F0]/60 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-7 sm:py-8 bg-white border-b border-[#FCE4F0] relative w-full overflow-hidden">
+      <div className="bloom-container relative">
         
-        {/* Scroll navigation arrows for desktop */}
+        {/* Scroll navigation arrow left */}
         <button
           onClick={() => scroll('left')}
-          className="hidden md:flex absolute -left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
+          className="hidden md:flex absolute -left-1 top-[42%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
 
+        {/* Scroll navigation arrow right */}
         <button
           onClick={() => scroll('right')}
-          className="hidden md:flex absolute -right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
+          className="hidden md:flex absolute -right-1 top-[42%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
 
-        {/* Categories container */}
+        {/* Categories horizontal row */}
         <div
           ref={scrollContainerRef}
-          className="flex items-start justify-start md:justify-between gap-5 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1"
+          className="flex items-start justify-start md:justify-between gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth py-1 px-1"
         >
           {CATEGORIES.map((cat) => {
             const isSelected = activeCategory === cat.id;
@@ -53,17 +54,18 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
               <button
                 key={cat.id}
                 onClick={() => handleCategoryClick(cat.id)}
-                className="group flex flex-col items-center shrink-0 text-center transition-all focus:outline-none"
+                className="group flex flex-col items-center shrink-0 text-center transition-all focus:outline-none cursor-pointer"
+                style={{ width: '84px' }}
               >
-                {/* Circle Container */}
+                {/* Circle Container (normalized to 76px / 80px) */}
                 <div
-                  className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 transition-all duration-300 ${
+                  className={`relative w-18 h-18 sm:w-20 sm:h-20 rounded-full p-0.5 transition-all duration-300 ${
                     isSelected
                       ? 'ring-2 ring-[#D61C7C] ring-offset-2 scale-105 shadow-md shadow-[#D61C7C]/20'
                       : 'hover:scale-105 hover:shadow-md'
                   }`}
                 >
-                  <div className="w-full h-full rounded-full overflow-hidden bg-[#FFF0F5] border-2 border-[#F8BBD0]/80 flex items-center justify-center relative">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-[#FFF5F8] border-2 border-[#F8BBD0] flex items-center justify-center relative">
                     
                     {cat.isOfferBadge ? (
                       // Special Offers Circle with % sign matching reference
@@ -71,29 +73,31 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
                         <Percent className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2.5]" />
                       </div>
                     ) : (
-                      // Real category image
-                      <img
-                        src={cat.image}
-                        alt={cat.name}
-                        className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                        loading="lazy"
-                      />
+                      // Category image with contain behavior so packaging is never sliced
+                      <div className="w-full h-full p-2 flex items-center justify-center">
+                        <img
+                          src={cat.image}
+                          alt={cat.name}
+                          className="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
                     )}
 
-                    {/* Subtle inner highlight */}
+                    {/* Subtle highlight */}
                     <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/5 pointer-events-none" />
                   </div>
                 </div>
 
-                {/* Category Label */}
+                {/* Category Label - wraps to 2 lines if needed without truncation */}
                 <span
-                  className={`mt-2 text-xs sm:text-[13px] font-medium tracking-tight transition-colors line-clamp-1 max-w-[80px] sm:max-w-[90px] ${
+                  className={`mt-2 text-xs sm:text-[12.5px] font-medium leading-tight transition-colors text-center w-full px-0.5 h-7 flex items-center justify-center ${
                     isSelected
                       ? 'text-[#D61C7C] font-semibold'
                       : 'text-stone-700 group-hover:text-[#D61C7C]'
                   }`}
                 >
-                  {cat.name}
+                  {cat.displayName || cat.name}
                 </span>
               </button>
             );

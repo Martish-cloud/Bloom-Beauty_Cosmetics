@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Send,
-  Heart,
-  Mail,
-  CheckCircle2,
-  Sparkles
+  CheckCircle2
 } from 'lucide-react';
 import { useToast } from '../../context/ToastContext';
 
@@ -63,53 +59,33 @@ export default function Footer({ onSelectCategory }) {
   };
 
   return (
-    <footer id="newsletter-section" className="bg-[#FFFDFE] border-t border-[#FCE4F0] pt-16 pb-8 text-stone-700 relative overflow-hidden">
-      
-      {/* Subtle background glow */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#FFF0F5] rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer id="newsletter-section" className="bg-[#FFFDFE] border-t border-[#FCE4F0] pt-14 pb-8 text-stone-700 relative overflow-hidden w-full">
+      <div className="bloom-container relative z-10">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-[#FCE4F0]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 border-b border-[#FCE4F0]">
           
           {/* Col 1: Logo & Brand statement (lg:col-span-3) */}
-          <div className="lg:col-span-3 space-y-4">
-            
-            {/* Logo */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#D61C7C] to-[#E84E9F] flex items-center justify-center text-white shadow-md shadow-[#D61C7C]/20">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="white" fillOpacity="0.3" />
-                  <circle cx="12" cy="9" r="3" fill="white" />
-                  <path d="M12 2v20" stroke="white" strokeWidth="1.5" />
-                  <path d="M2 12h20" stroke="white" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-[0.08em] text-[#751437] leading-none">
-                  BLOOM
-                </span>
-                <span className="font-serif text-xl font-medium tracking-[0.14em] text-[#D61C7C] leading-none mt-0.5">
-                  BEAUTY
-                </span>
-                <span className="text-[8px] font-semibold tracking-[0.28em] text-stone-400 mt-1 uppercase">
-                  BEAUTY LIVES HERE
-                </span>
-              </div>
-            </div>
+          <div className="lg:col-span-3 space-y-3.5">
+            <a href="#" className="inline-block">
+              <img
+                src="/bloom-logo-transparent.png"
+                alt="Bloom Beauty - Beauty Lives Here"
+                className="h-10 w-auto object-contain"
+              />
+            </a>
 
-            <p className="text-xs text-stone-500 leading-relaxed pr-4">
+            <p className="text-xs text-stone-500 leading-relaxed pr-2">
               Bloom Beauty curates the purest, dermatologist-tested cosmetics and skincare products crafted to let your natural radiance shine through effortlessly.
             </p>
 
-            <div className="pt-2 text-xs font-semibold text-[#8E1843]">
+            <div className="text-[11px] font-semibold text-[#8E1843]">
               100% Certified Original • Made with Love in India
             </div>
           </div>
 
           {/* Col 2: SHOP (lg:col-span-2) */}
-          <div className="lg:col-span-2 space-y-3">
+          <div className="lg:col-span-2 space-y-2.5">
             <h4 className="text-xs font-bold tracking-wider text-[#751437] uppercase">
               SHOP
             </h4>
@@ -154,7 +130,7 @@ export default function Footer({ onSelectCategory }) {
           </div>
 
           {/* Col 3: HELP (lg:col-span-2) */}
-          <div className="lg:col-span-2 space-y-3">
+          <div className="lg:col-span-2 space-y-2.5">
             <h4 className="text-xs font-bold tracking-wider text-[#751437] uppercase">
               HELP
             </h4>
@@ -199,7 +175,7 @@ export default function Footer({ onSelectCategory }) {
           </div>
 
           {/* Col 4: ABOUT (lg:col-span-2) */}
-          <div className="lg:col-span-2 space-y-3">
+          <div className="lg:col-span-2 space-y-2.5">
             <h4 className="text-xs font-bold tracking-wider text-[#751437] uppercase">
               ABOUT
             </h4>
@@ -254,39 +230,39 @@ export default function Footer({ onSelectCategory }) {
               </p>
 
               {isSubscribed ? (
-                <div className="p-3 rounded-xl bg-[#FFF0F5] border border-[#F8BBD0] flex items-center gap-2 text-xs text-[#751437] font-medium">
+                <div className="p-2.5 rounded-xl bg-[#FFF0F5] border border-[#F8BBD0] flex items-center gap-2 text-xs text-[#751437] font-medium">
                   <CheckCircle2 className="w-4 h-4 text-[#D61C7C] shrink-0" />
-                  <span>Thank you! Code BLOOM10 saved to your cart.</span>
+                  <span>Code BLOOM10 saved to your cart!</span>
                 </div>
               ) : (
-                <form onSubmit={handleSubscribe} className="space-y-2">
+                <form onSubmit={handleSubscribe} className="space-y-1.5">
                   <div className="flex gap-2">
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
-                      className="flex-1 bg-[#FFF0F5]/80 border border-[#F8BBD0] focus:border-[#D61C7C] focus:bg-white text-xs text-stone-800 placeholder-stone-400 rounded-xl px-3 py-2.5 outline-none transition-all"
+                      className="flex-1 bg-[#FFF0F5]/80 border border-[#F8BBD0] focus:border-[#D61C7C] focus:bg-white text-xs text-stone-800 placeholder-stone-400 rounded-xl px-3 py-2 outline-none transition-all"
                     />
                     <button
                       type="submit"
-                      className="bg-[#D61C7C] hover:bg-[#BF156C] text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-sm transition-colors cursor-pointer"
+                      className="bg-[#D61C7C] hover:bg-[#BF156C] text-white text-xs font-semibold px-3.5 py-2 rounded-xl shadow-xs transition-colors cursor-pointer"
                     >
                       Subscribe
                     </button>
                   </div>
                   {emailError && (
-                    <p className="text-[11px] text-rose-600 font-medium">{emailError}</p>
+                    <p className="text-[10.5px] text-rose-600 font-medium">{emailError}</p>
                   )}
                 </form>
               )}
 
               {/* Follow Us social links */}
-              <div className="mt-5">
-                <span className="text-[11px] font-semibold text-stone-600 uppercase tracking-wider block mb-2">
+              <div className="mt-4">
+                <span className="text-[10.5px] font-semibold text-stone-500 uppercase tracking-wider block mb-2">
                   Follow Us
                 </span>
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2">
                   <a href="#instagram" aria-label="Instagram" className="w-7 h-7 rounded-full bg-[#FFF0F5] border border-[#F8BBD0] flex items-center justify-center text-[#751437] hover:text-[#D61C7C] hover:bg-white transition-colors">
                     <InstagramIcon />
                   </a>
@@ -306,12 +282,12 @@ export default function Footer({ onSelectCategory }) {
               </div>
             </div>
 
-            {/* Handwritten decorative text matching screenshot: "Beauty Blooms Within ♡" */}
-            <div className="mt-6 text-right">
-              <div className="font-script text-3xl sm:text-4xl text-[#751437] leading-tight select-none">
+            {/* Handwritten decorative text: "Beauty Blooms Within ♡" */}
+            <div className="mt-5 text-right">
+              <div className="font-script text-2xl sm:text-3xl text-[#751437] leading-tight select-none">
                 Beauty<br />
                 <span className="text-[#D61C7C]">Blooms Within</span>
-                <span className="text-xl text-[#D61C7C] ml-1">♡</span>
+                <span className="text-lg text-[#D61C7C] ml-1">♡</span>
               </div>
             </div>
 
@@ -320,19 +296,19 @@ export default function Footer({ onSelectCategory }) {
         </div>
 
         {/* Bottom Bar: Copyright & Legal links */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-stone-500">
           <div>
             © 2024 Bloom Beauty. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-6">
-            <a href="#terms" onClick={(e) => { e.preventDefault(); alert("Terms & Conditions: Standard e-commerce terms applicable."); }} className="hover:text-[#D61C7C] transition-colors">
+          <div className="flex items-center gap-5">
+            <a href="#terms" onClick={(e) => { e.preventDefault(); alert("Terms & Conditions: Standard terms apply."); }} className="hover:text-[#D61C7C] transition-colors">
               Terms & Conditions
             </a>
-            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert("Privacy Policy: Your data is secure and never shared."); }} className="hover:text-[#D61C7C] transition-colors">
+            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert("Privacy Policy: Your data is secure."); }} className="hover:text-[#D61C7C] transition-colors">
               Privacy Policy
             </a>
-            <a href="#sitemap" onClick={(e) => { e.preventDefault(); alert("Sitemap: All categories and bestseller collections are accessible."); }} className="hover:text-[#D61C7C] transition-colors">
+            <a href="#sitemap" onClick={(e) => { e.preventDefault(); alert("Sitemap: Browse full product catalog."); }} className="hover:text-[#D61C7C] transition-colors">
               Sitemap
             </a>
           </div>

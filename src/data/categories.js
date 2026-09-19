@@ -30,7 +30,7 @@ export const CATEGORIES = [
   {
     id: 'face-masks',
     name: 'Face Masks',
-    image: 'https://images.unsplash.com/photo-1512290900672-1f5076ebf3df?auto=format&fit=crop&w=400&q=85',
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=85',
     itemCount: '45+ Products',
     badge: null
   },

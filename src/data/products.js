@@ -239,7 +239,7 @@ export const PRODUCTS = [
     rating: 4.6,
     reviewCount: '820',
     isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1512290900672-1f5076ebf3df?auto=format&fit=crop&w=800&q=85',
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85',
     description: 'Biodegradable bamboo microfiber sheet masks soaked in fresh botanical essence with damask rosewater, peony extracts, and trehalose.',
     benefits: [
       'Instant 15-minute glass glow recharge',

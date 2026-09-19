@@ -4,9 +4,7 @@ import {
   User, 
   Heart, 
   ShoppingBag, 
-  Menu, 
-  X,
-  Sparkles
+  Menu
 } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
@@ -86,7 +84,7 @@ export default function Header({
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-7 shrink-0">
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 shrink-0">
             {navItems.map((item) => {
               const isActive = activeCategory === item.id;
               return (
@@ -94,7 +92,7 @@ export default function Header({
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={(e) => handleNavClick(item.id, e)}
-                  className={`relative text-xs xl:text-[13px] font-medium tracking-wider uppercase transition-colors py-1 cursor-pointer whitespace-nowrap ${
+                  className={`relative text-xs xl:text-[12.5px] font-medium tracking-wider uppercase transition-colors py-1 cursor-pointer whitespace-nowrap ${
                     isActive 
                       ? 'text-[#D61C7C] font-semibold' 
                       : 'text-stone-700 hover:text-[#D61C7C]'
@@ -110,13 +108,13 @@ export default function Header({
           </nav>
 
           {/* Right Action Icons & Search Box */}
-          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3.5 shrink-0">
             
             {/* Desktop Search Input */}
             <form 
               onSubmit={handleQuickSearchSubmit}
               onClick={() => onOpenSearch && onOpenSearch('')}
-              className="hidden md:flex items-center relative w-40 lg:w-52 xl:w-64 group cursor-pointer"
+              className="hidden md:flex items-center relative w-36 lg:w-44 xl:w-56 group cursor-pointer"
             >
               <input
                 type="text"

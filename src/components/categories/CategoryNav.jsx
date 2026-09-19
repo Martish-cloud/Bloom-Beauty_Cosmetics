@@ -21,13 +21,13 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
   };
 
   return (
-    <section className="py-7 sm:py-8 bg-white border-b border-[#FCE4F0] relative w-full overflow-hidden">
+    <section className="py-5 sm:py-6 bg-white border-b border-[#FCE4F0] relative w-full overflow-hidden">
       <div className="bloom-container relative">
         
         {/* Scroll navigation arrow left */}
         <button
           onClick={() => scroll('left')}
-          className="hidden md:flex absolute -left-1 top-[42%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
+          className="hidden md:flex absolute -left-1 top-[40%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -36,7 +36,7 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
         {/* Scroll navigation arrow right */}
         <button
           onClick={() => scroll('right')}
-          className="hidden md:flex absolute -right-1 top-[42%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
+          className="hidden md:flex absolute -right-1 top-[40%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-[#F8BBD0] items-center justify-center text-stone-600 hover:text-[#D61C7C] hover:scale-105 transition-all"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-4 h-4" />
@@ -80,6 +80,9 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
                           alt={cat.name}
                           className="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-300"
                           loading="lazy"
+                          onError={(e) => {
+                            e.currentTarget.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=85';
+                          }}
                         />
                       </div>
                     )}
@@ -91,7 +94,7 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
 
                 {/* Category Label - wraps to 2 lines if needed without truncation */}
                 <span
-                  className={`mt-2 text-xs sm:text-[12.5px] font-medium leading-tight transition-colors text-center w-full px-0.5 h-7 flex items-center justify-center ${
+                  className={`mt-2 text-xs sm:text-[12.5px] font-medium leading-tight transition-colors text-center w-full px-0.5 min-h-[28px] whitespace-pre-line flex items-center justify-center ${
                     isSelected
                       ? 'text-[#D61C7C] font-semibold'
                       : 'text-stone-700 group-hover:text-[#D61C7C]'

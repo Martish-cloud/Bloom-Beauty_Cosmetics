@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import { 
   X, 
   ShoppingBag, 
-  Trash2, 
   Plus, 
   Minus, 
   ArrowRight, 
   Tag, 
-  Truck, 
-  Sparkles,
-  CheckCircle2
+  Truck
 } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
@@ -20,7 +17,6 @@ export default function CartDrawer({ onCheckout }) {
     setIsCartOpen, 
     updateQuantity, 
     removeFromCart, 
-    clearCart,
     totalItems,
     subtotal,
     productSavings,

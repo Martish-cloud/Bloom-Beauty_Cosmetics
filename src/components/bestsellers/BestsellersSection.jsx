@@ -14,7 +14,7 @@ export default function BestsellersSection({
       const filtered = products.filter(p => p.category === activeCategory);
       if (filtered.length > 0) return filtered;
     }
-    return products.filter(p => p.isBestseller).slice(0, 6);
+    return products.filter(p => p.isBestseller).slice(0, 12);
   }, [products, activeCategory]);
 
   return (
@@ -43,8 +43,8 @@ export default function BestsellersSection({
           </button>
         </div>
 
-        {/* Bestseller Grid: 6 Products on Left + Skincare That Cares Banner on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
+        {/* Bestseller Grid: 12 Products on Left + Skincare That Cares Banner on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
           
           {/* Product cards container */}
           <div className="lg:col-span-8 xl:col-span-9">
@@ -59,9 +59,9 @@ export default function BestsellersSection({
             </div>
           </div>
 
-          {/* Featured Skincare Banner (Compact & Balanced with Product Row) */}
+          {/* Featured Skincare Banner (Balanced with Product Rows) */}
           <div className="lg:col-span-4 xl:col-span-3">
-            <div className="w-full relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#FCE7F0] via-[#FDF2F7] to-[#FFF0F5] border border-[#F8BBD0] p-4 sm:p-5 flex flex-col shadow-soft-card group hover:shadow-soft-hover transition-all duration-300">
+            <div className="w-full h-full relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#FCE7F0] via-[#FDF2F7] to-[#FFF0F5] border border-[#F8BBD0] p-4 sm:p-5 flex flex-col justify-between shadow-soft-card group hover:shadow-soft-hover transition-all duration-300">
               
               {/* Banner Text Content */}
               <div className="relative z-10 text-left">

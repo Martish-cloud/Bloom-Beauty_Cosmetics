@@ -26,7 +26,7 @@ const YoutubeIcon = () => (
   </svg>
 );
 
-export default function Footer({ onSelectCategory }) {
+export default function Footer({ onSelectCategory, onGoToShop }) {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [emailError, setEmailError] = useState('');
@@ -51,7 +51,9 @@ export default function Footer({ onSelectCategory }) {
 
   const handleCategoryNav = (catId, e) => {
     e.preventDefault();
-    if (onSelectCategory) {
+    if (onGoToShop) {
+      onGoToShop(catId);
+    } else if (onSelectCategory) {
       onSelectCategory(catId);
       const el = document.getElementById('bestsellers-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });

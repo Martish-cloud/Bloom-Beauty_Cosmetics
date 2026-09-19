@@ -86,21 +86,24 @@ export default function HeroSection({ onShopNowClick }) {
 
           </div>
 
-          {/* Right Visual Column (7 cols on lg/xl) - Seamless natural blend */}
-          <div className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-2xl select-none">
-              <picture>
+          {/* Right Visual Column (7 cols on lg/xl) - Majestic billboard presence occupying 45%-55% */}
+          <div className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center lg:justify-end overflow-visible">
+            <div className="relative w-full flex items-center justify-end select-none">
+              <picture className="w-full flex items-center justify-end">
                 <source srcSet="/hero-model-4k.webp 2x, /hero-model-clean.webp 1x" type="image/webp" />
                 <img
                   src="/hero-model-clean.png"
                   alt="Radiant beauty model holding pink skincare bottle with glowing skin"
-                  className="w-full h-auto object-contain object-center block pointer-events-none drop-shadow-xs"
+                  className="w-full sm:w-[95%] lg:w-[108%] xl:w-[114%] max-w-none h-auto object-contain object-right block pointer-events-none drop-shadow-xs transition-transform duration-500"
                   fetchPriority="high"
                   loading="eager"
                   width="1308"
                   height="400"
                 />
               </picture>
+
+              {/* Feathered left blend overlay to guarantee 100% seamless transition into background */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-24 xl:w-36 bg-gradient-to-r from-[#FFF5F8] via-[#FDF0F5]/80 to-transparent pointer-events-none z-10" />
             </div>
           </div>
 

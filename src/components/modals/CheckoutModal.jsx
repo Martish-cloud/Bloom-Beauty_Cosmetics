@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { 
   X, 
-  CheckCircle2, 
   CreditCard, 
-  Truck, 
-  ShieldCheck, 
   Smartphone, 
   Banknote, 
   Sparkles,
@@ -13,7 +10,7 @@ import {
 import { useCart } from '../../context/CartContext';
 
 export default function CheckoutModal({ isOpen, onClose }) {
-  const { cartItems, finalTotal, subtotal, shippingFee, promoDiscount, clearCart } = useCart();
+  const { finalTotal, clearCart } = useCart();
 
   const [step, setStep] = useState('form'); // 'form' | 'success'
   const [formData, setFormData] = useState({

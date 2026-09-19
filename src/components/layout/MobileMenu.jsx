@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Search, Heart, ShoppingBag, User, Sparkles, ChevronRight, Phone } from 'lucide-react';
+import { X, Search, Heart, ShoppingBag, Sparkles, ChevronRight, Phone } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
 
@@ -8,7 +8,10 @@ export default function MobileMenu({
   onClose, 
   onSelectCategory, 
   activeCategory,
-  onOpenSearch 
+  onOpenSearch,
+  currentView = 'home',
+  onGoToShop,
+  onGoToHome
 }) {
   const { wishlistCount, setIsWishlistOpen } = useWishlist();
   const { totalItems, setIsCartOpen } = useCart();
@@ -27,6 +30,16 @@ export default function MobileMenu({
   ];
 
   const handleItemClick = (id) => {
+    if (id === 'all' && onGoToShop) {
+      onGoToShop('all');
+      onClose();
+      return;
+    }
+    if (currentView === 'shop' && onGoToShop) {
+      onGoToShop(id);
+      onClose();
+      return;
+    }
     onSelectCategory(id);
     onClose();
     const el = document.getElementById('bestsellers-section');
@@ -46,7 +59,13 @@ export default function MobileMenu({
         
         {/* Header */}
         <div className="p-5 border-b border-[#FCE4F0] flex items-center justify-between bg-[#FFF0F5]/50">
-          <div className="flex items-center gap-2">
+          <button 
+            onClick={() => {
+              if (onGoToHome) onGoToHome();
+              onClose();
+            }}
+            className="flex items-center gap-2 text-left cursor-pointer"
+          >
             <div className="w-8 h-8 rounded-full bg-[#D61C7C] flex items-center justify-center text-white">
               <Sparkles className="w-4 h-4" />
             </div>
@@ -58,7 +77,7 @@ export default function MobileMenu({
                 BEAUTY LIVES HERE
               </span>
             </div>
-          </div>
+          </button>
           <button 
             onClick={onClose}
             className="p-1.5 rounded-full text-stone-500 hover:text-stone-800 hover:bg-stone-100"

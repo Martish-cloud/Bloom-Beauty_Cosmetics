@@ -138,10 +138,146 @@ export const PRODUCTS = [
     howToUse: 'Apply generous amount to roots and scalp. Gently massage with fingertips for 5-10 minutes. Leave on overnight or for 1 hour before shampooing.',
     size: '150 ml'
   },
-
-  // Additional curated products for full category exploration
   {
     id: 'prod-7',
+    brand: "L'Oréal Paris",
+    name: 'Revitalift Hyaluronic Serum',
+    category: 'skincare',
+    price: 799,
+    oldPrice: 999,
+    discount: '20% OFF',
+    rating: 4.6,
+    reviewCount: '2.4k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=85',
+    description: 'Intense 1.5% pure Hyaluronic Acid serum that instantly hydrates, plumps skin from within, and reduces fine lines by up to 60% for youthful radiance.',
+    benefits: [
+      'Contains 1.5% multi-molecular Hyaluronic Acid',
+      'Instantly hydrates and visibly reduces fine dehydration lines',
+      'Ultra-lightweight non-sticky fast absorbing texture',
+      'Dermatologist-validated for all skin types'
+    ],
+    ingredients: 'Aqua/Water, Glycerin, Hydroxyethylpiperazine Ethane Sulfonic Acid, Sodium Hyaluronate, PEG-60 Hydrogenated Castor Oil, Secale Cereale Seed Extract, Calcium Pantothenate.',
+    howToUse: 'Apply 3-4 drops onto face and neck morning and night on cleansed, damp skin before face moisturizer.',
+    size: '30 ml'
+  },
+  {
+    id: 'prod-8',
+    brand: 'Maybelline',
+    name: 'Super Stay Matte Lipstick',
+    category: 'makeup',
+    price: 649,
+    oldPrice: 799,
+    discount: '19% OFF',
+    rating: 4.5,
+    reviewCount: '1.8k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=85',
+    description: 'Iconic liquid matte lipstick delivering up to 16 hours of saturated, transfer-proof color with a precision arrow applicator for seamless glide.',
+    benefits: [
+      'Up to 16 hours transfer-proof wear',
+      'Intense one-stroke pigment payoff',
+      'Smudge-resistant velvet matte finish',
+      'Does not dry or crack on lips'
+    ],
+    ingredients: 'Dimethicone, Trimethylsiloxysilicate, Isododecane, Nylon-611/Dimethicone Copolymer, Dimethicone Crosspolymer, C30-45 Alkyldimethylsilyl Polypropylsilsesquioxane.',
+    howToUse: 'Step 1. Apply liquid lipstick in the center of your upper lip and follow the contours of your mouth. Step 2. Glide across entire bottom lip. Allow 2 minutes to dry.',
+    size: '5 ml'
+  },
+  {
+    id: 'prod-9',
+    brand: 'Dove',
+    name: 'Deep Moisture Body Wash',
+    category: 'body-care',
+    price: 399,
+    oldPrice: 499,
+    discount: '20% OFF',
+    rating: 4.6,
+    reviewCount: '2.1k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85',
+    description: 'Nourishing body wash formulated with Microbiome Nutrient Serum that actively hydrates dry skin and strengthens your skin barrier in just one shower.',
+    benefits: [
+      'Infused with 24hr Renewing MicroMoisture',
+      'Sulfate-free, paraben-free plant-based cleansers',
+      'Deeply nourishes the skin microbiome',
+      'Luxurious creamy lather with fresh floral scent'
+    ],
+    ingredients: 'Water (Aqua), Cocamidopropyl Betaine, Sodium Hydroxypropyl Starch Phosphate, Lauric Acid, Sodium Lauroyl Glycinate, Sodium Lauroyl Isethionate, Hydrogenated Soybean Oil, Glycerin.',
+    howToUse: 'Squeeze body wash onto a wet pouf or washcloth and work into a rich, creamy lather. Smooth over skin and rinse cleanly.',
+    size: '450 ml'
+  },
+  {
+    id: 'prod-10',
+    brand: 'Lakmé',
+    name: 'Absolute Skin Natural Foundation',
+    category: 'makeup',
+    price: 749,
+    oldPrice: 899,
+    discount: '17% OFF',
+    rating: 4.5,
+    reviewCount: '1.6k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85',
+    description: 'Feather-light perfecting fluid mousse foundation infused with SPF 20 and argan oil extracts that melts seamlessly to give a radiant satin second-skin look.',
+    benefits: [
+      'Air-whipped breathable mousse texture',
+      'SPF 20 protection against daily UV rays',
+      'Enriched with Moroccan Argan oil essence',
+      'Medium to buildable luminous coverage'
+    ],
+    ingredients: 'Aqua, Cyclopentasiloxane, Ethylhexyl Methoxycinnamate, Dimethicone, Butylene Glycol, Argania Spinosa Kernel Oil, Tocopheryl Acetate, CI 77891, CI 77492, CI 77491.',
+    howToUse: 'Pump 1-2 drops onto the back of your hand. Dot onto forehead, cheeks, and chin. Blend evenly outwards with brush or sponge.',
+    size: '30 ml'
+  },
+  {
+    id: 'prod-11',
+    brand: 'Plum',
+    name: 'Green Tea Face Wash',
+    category: 'skincare',
+    price: 429,
+    oldPrice: 499,
+    discount: '14% OFF',
+    rating: 4.7,
+    reviewCount: '2.7k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=85',
+    description: 'Refreshing soap-free foaming cleansing gel loaded with Green Tea extracts and gentle glycolic acid to combat acne, wash away oiliness, and purify pores.',
+    benefits: [
+      'Rich in antioxidant Green Tea to control breakouts',
+      'Soft cellulose beads provide gentle daily exfoliation',
+      'Glycolic acid clears dead cellular buildup',
+      '100% vegan, cruelty-free, non-drying cleanser'
+    ],
+    ingredients: 'Aqua, Camellia Sinensis (Green Tea) Leaf Extract, Glycolic Acid, Sodium Laureth Sulfate, Cocamidopropyl Betaine, Glycerin, Cellulose Beads, Phenoxyethanol.',
+    howToUse: 'Lather a coin-sized amount on wet face. Gently massage in upward circular motions for 30 seconds. Splash thoroughly with cool water.',
+    size: '100 ml'
+  },
+  {
+    id: 'prod-12',
+    brand: 'Nykaa',
+    name: 'Matte Lip Crayon',
+    category: 'makeup',
+    price: 599,
+    oldPrice: 699,
+    discount: '14% OFF',
+    rating: 4.4,
+    reviewCount: '1.3k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?auto=format&fit=crop&w=800&q=85',
+    description: 'Ultra-creamy, smudge-proof lip crayon enriched with marula oil and vitamin E that glides like butter and sets to a weightless velvety matte finish.',
+    benefits: [
+      'High-coverage one-swipe color pigmentation',
+      'Enriched with nourishing Marula & Vitamin E oils',
+      'Sharpener included for precise lip contouring',
+      'Long-lasting comfort wear for up to 8 hours'
+    ],
+    ingredients: 'Isododecane, Ozokerite, Trimethylsiloxysilicate, Cyclopentasiloxane, Sclerocarya Birrea (Marula) Seed Oil, Tocopherol, CI 77891, CI 15850, CI 77491.',
+    howToUse: 'Trace the natural lip line with the pointed crayon tip, then fill in color across upper and lower lips.',
+    size: '2.8 g'
+  },
+  {
+    id: 'prod-13',
     brand: 'Bloom Atelier',
     name: 'Rose Damascena Eau De Parfum',
     category: 'fragrances',
@@ -163,7 +299,7 @@ export const PRODUCTS = [
     size: '50 ml'
   },
   {
-    id: 'prod-8',
+    id: 'prod-14',
     brand: 'Bloom Botanics',
     name: 'Camellia Repair Hair Serum',
     category: 'haircare',
@@ -185,53 +321,9 @@ export const PRODUCTS = [
     size: '100 ml'
   },
   {
-    id: 'prod-9',
-    brand: 'Bloom Luxe',
-    name: 'Velvet Matte Lip Jewel - Rouge Rose',
-    category: 'makeup',
-    price: 699,
-    oldPrice: 899,
-    discount: '22% OFF',
-    rating: 4.7,
-    reviewCount: '1.7k',
-    isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=85',
-    description: 'Ultra-pigmented, petal-soft matte lipstick enriched with French hyaluronic spheres and jojoba wax for comfortable weightless wear that never dries out lips.',
-    benefits: [
-      'Transfer-resistant for up to 10 hours',
-      'Intense one-stroke color payoff',
-      'Non-drying moisture barrier'
-    ],
-    ingredients: 'Dimethicone, Synthetic Wax, Jojoba Esters, Hyaluronic Acid Spheres, Kaolin, CI 77891, CI 15850, CI 77491.',
-    howToUse: 'Outline lips with tip of bullet and fill in from center towards the corners.',
-    size: '3.8 g'
-  },
-  {
-    id: 'prod-10',
-    brand: 'Bloom Pure',
-    name: 'Ceramide Barrier Recovery Cream',
-    category: 'skincare',
-    price: 749,
-    oldPrice: 899,
-    discount: '17% OFF',
-    rating: 4.9,
-    reviewCount: '2.6k',
-    isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85',
-    description: 'A comforting moisture barrier cream packed with 5 essential ceramides, oat beta-glucan, and colloidal oatmeal to calm stressed, sensitized skin.',
-    benefits: [
-      'Clinically repairs damaged skin barrier in 3 days',
-      'Calms redness, irritation, and flaking',
-      'Fragrance-free & non-comedogenic'
-    ],
-    ingredients: 'Aqua, Glycerin, Caprylic/Capric Triglyceride, Ceramide NP, Ceramide AP, Ceramide EOP, Phytosphingosine, Cholesterol, Avena Sativa (Oat) Kernel Flour.',
-    howToUse: 'Smooth generously over face and neck as the final step in your skincare routine.',
-    size: '80 ml'
-  },
-  {
-    id: 'prod-11',
+    id: 'prod-15',
     brand: 'Bloom Glow',
-    name: 'Rosewater & Peony Sheet Mask (Pack of 5)',
+    name: 'Rose & Clay Illuminating Face Mask',
     category: 'face-masks',
     price: 449,
     oldPrice: 599,
@@ -240,36 +332,14 @@ export const PRODUCTS = [
     reviewCount: '820',
     isBestseller: false,
     image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85',
-    description: 'Biodegradable bamboo microfiber sheet masks soaked in fresh botanical essence with damask rosewater, peony extracts, and trehalose.',
+    description: 'Rich French pink kaolin clay infused with damask rosewater, niacinamide, and botanical squalane that gently clarifies pores while restoring luminous glass-skin radiance.',
     benefits: [
-      'Instant 15-minute glass glow recharge',
-      'Deeply quenches parched skin cells',
-      'Eco-friendly compostable fiber'
+      'Deeply detoxifies without drying or stripping skin',
+      'Refines pores and tightens skin texture',
+      'Infused with calming pure damask rose essence'
     ],
-    ingredients: 'Aqua, Rosa Damascena Flower Water, Paeonia Lactiflora Root Extract, Niacinamide, Betaine, Trehalose, Allantoin.',
-    howToUse: 'Unfold mask and press onto clean skin. Relax for 15-20 minutes, then discard and tap remaining essence into skin.',
-    size: '5 Sheets x 25 ml'
-  },
-  {
-    id: 'prod-12',
-    brand: 'Bloom Body',
-    name: 'Whipped Shea & Almond Body Butter',
-    category: 'body-care',
-    price: 599,
-    oldPrice: 750,
-    discount: '20% OFF',
-    rating: 4.8,
-    reviewCount: '1.1k',
-    isBestseller: false,
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85',
-    description: 'Air-whipped decadent body soufflé infused with raw organic African shea butter, sweet almond oil, and warm floral vanilla notes.',
-    benefits: [
-      '48-hour continuous moisture protection',
-      'Leaves skin cashmere-soft and radiant',
-      'Melts into skin without greasy residue'
-    ],
-    ingredients: 'Butyrospermum Parkii (Shea) Butter, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Theobroma Cacao Seed Butter, Cetearyl Alcohol, Fragrance.',
-    howToUse: 'Massage all over body post-shower while skin is warm and slightly damp.',
-    size: '200 g'
+    ingredients: 'Aqua, Kaolin (Pink Clay), Rosa Damascena Flower Water, Niacinamide, Squalane, Glycerin, Allantoin, Phenoxyethanol.',
+    howToUse: 'Apply an even layer to clean, dry skin. Relax for 10-15 minutes until clay is semi-dry. Rinse thoroughly with lukewarm water.',
+    size: '100 g'
   }
 ];

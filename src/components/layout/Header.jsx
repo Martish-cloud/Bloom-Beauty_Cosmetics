@@ -13,7 +13,10 @@ export default function Header({
   onOpenSearch, 
   onOpenMobileMenu, 
   onSelectCategory,
-  activeCategory 
+  activeCategory,
+  currentView = 'home',
+  onGoToShop,
+  onGoToHome
 }) {
   const { totalItems, setIsCartOpen } = useCart();
   const { wishlistCount, setIsWishlistOpen } = useWishlist();
@@ -33,9 +36,21 @@ export default function Header({
 
   const handleNavClick = (id, e) => {
     e.preventDefault();
+    if (id === 'all') {
+      if (onGoToShop) {
+        onGoToShop('all');
+        return;
+      }
+    }
     if (id === 'blog') {
       const el = document.getElementById('newsletter-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    if (currentView === 'shop') {
+      if (onGoToShop) {
+        onGoToShop(id);
+      }
       return;
     }
     onSelectCategory(id);
@@ -70,8 +85,12 @@ export default function Header({
               href="#" 
               onClick={(e) => {
                 e.preventDefault();
-                onSelectCategory('all');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (onGoToHome) {
+                  onGoToHome();
+                } else {
+                  onSelectCategory('all');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
               }}
               className="flex items-center cursor-pointer select-none"
             >
@@ -86,7 +105,7 @@ export default function Header({
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 shrink-0">
             {navItems.map((item) => {
-              const isActive = activeCategory === item.id;
+              const isActive = (currentView === 'shop' && item.id === 'all') || (currentView === 'home' && activeCategory === item.id);
               return (
                 <a
                   key={item.id}

@@ -30,6 +30,7 @@ export default function ShopPage({
 
     return [
       { id: 'all', label: 'All Products', count: counts['all'] || 0 },
+      { id: 'combos', label: '🔥 Combos (30-35% Off)', count: counts['combos'] || 0 },
       { id: 'skincare', label: 'Skincare', count: counts['skincare'] || 0 },
       { id: 'makeup', label: 'Makeup', count: counts['makeup'] || 0 },
       { id: 'haircare', label: 'Haircare', count: counts['haircare'] || 0 },

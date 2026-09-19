@@ -131,6 +131,23 @@ export default function ProductDetailModal({ product, isOpen, onClose }) {
               )}
             </div>
 
+            {/* Bundled Items if Combo */}
+            {product.includes && product.includes.length > 0 && (
+              <div className="mb-4 p-3 rounded-2xl bg-[#FFF5F8] border border-[#F8BBD0]/60">
+                <span className="text-[10.5px] font-bold tracking-wider text-[#8E1843] uppercase block mb-1.5">
+                  Included In This Combo Set:
+                </span>
+                <div className="space-y-1">
+                  {product.includes.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-1.5 text-xs text-stone-700 font-medium">
+                      <Check className="w-3.5 h-3.5 text-[#D61C7C] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Tabs for Description, Benefits, Ingredients */}
             <div className="flex border-b border-[#FCE4F0] mb-3 text-xs font-semibold">
               <button

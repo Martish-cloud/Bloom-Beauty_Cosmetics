@@ -35,6 +35,17 @@ export default function MobileMenu({
       onClose();
       return;
     }
+    if (id === 'offers') {
+      if (currentView === 'shop' && onGoToHome) {
+        onGoToHome();
+      }
+      onClose();
+      setTimeout(() => {
+        const el = document.getElementById('combo-offers-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, currentView === 'shop' ? 100 : 0);
+      return;
+    }
     if (currentView === 'shop' && onGoToShop) {
       onGoToShop(id);
       onClose();

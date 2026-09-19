@@ -1,7 +1,7 @@
 import React from 'react';
 import { Truck, Smartphone } from 'lucide-react';
 
-export default function AnnouncementBar() {
+export default function AnnouncementBar({ onOpenCombos }) {
   return (
     <div className="bg-[#8E1843] text-white text-[11px] sm:text-xs font-medium tracking-wide py-2 shadow-xs relative z-30 w-full overflow-hidden">
       <div className="bloom-container flex items-center justify-between gap-4">
@@ -12,13 +12,17 @@ export default function AnnouncementBar() {
           <span>Free Shipping on Orders Above ₹499</span>
         </div>
 
-        {/* Center message - hidden on smaller screens */}
-        <div className="hidden md:flex items-center gap-2 text-white/90 font-normal tracking-wider text-[11px] mx-auto text-center truncate">
-          <span>Glow Naturally</span>
-          <span className="opacity-50">|</span>
-          <span>Beauty for a Better You</span>
-          <span className="opacity-50">|</span>
-          <span>100% Original Products</span>
+        {/* Center message - Interactive Flash Sale Callout */}
+        <div className="hidden md:flex items-center gap-2 text-white/95 font-normal tracking-wider text-[11px] mx-auto text-center truncate">
+          <button 
+            onClick={onOpenCombos}
+            className="hover:underline inline-flex items-center gap-2 text-[#FCE7EE] font-semibold cursor-pointer transition-opacity hover:opacity-95"
+          >
+            <span>⚡ LIMITED TIME: 30%–35% OFF Beauty Combos & Sets</span>
+            <span className="bg-[#D61C7C] hover:bg-[#BF156C] text-white px-2 py-0.5 rounded-full text-[10px] uppercase font-bold tracking-wider shadow-2xs">
+              Shop Deals →
+            </span>
+          </button>
         </div>
 
         {/* Right item */}

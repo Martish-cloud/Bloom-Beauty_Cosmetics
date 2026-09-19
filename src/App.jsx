@@ -14,6 +14,7 @@ import PromoBanners from './components/promo/PromoBanners';
 import TrustSection from './components/trust/TrustSection';
 import Footer from './components/layout/Footer';
 import ShopPage from './components/shop/ShopPage';
+import ComboOffersSection from './components/combos/ComboOffersSection';
 
 // Modals
 import ProductDetailModal from './components/modals/ProductDetailModal';
@@ -85,10 +86,20 @@ function Storefront() {
     }
   };
 
+  const handleOpenCombos = () => {
+    if (currentView !== 'home') {
+      setCurrentView('home');
+    }
+    setTimeout(() => {
+      const el = document.getElementById('combo-offers-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, currentView !== 'home' ? 100 : 0);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFDFE]">
       {/* Top Announcement Bar */}
-      <AnnouncementBar />
+      <AnnouncementBar onOpenCombos={handleOpenCombos} />
 
       {/* Main Sticky Header */}
       <Header
@@ -131,6 +142,12 @@ function Storefront() {
             <CategoryNav
               activeCategory={activeCategory}
               onSelectCategory={handleSelectCategory}
+            />
+
+            {/* Special Limited-Time Combo Offers (30%–35% OFF) */}
+            <ComboOffersSection
+              onQuickView={handleQuickView}
+              onViewAllCombos={() => handleGoToShop('combos')}
             />
 
             {/* Bestsellers Row (12 items) + Skincare That Cares Banner */}

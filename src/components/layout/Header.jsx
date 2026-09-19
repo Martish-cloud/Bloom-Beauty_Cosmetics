@@ -42,6 +42,16 @@ export default function Header({
         return;
       }
     }
+    if (id === 'offers') {
+      if (currentView === 'shop' && onGoToHome) {
+        onGoToHome();
+      }
+      setTimeout(() => {
+        const el = document.getElementById('combo-offers-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, currentView === 'shop' ? 100 : 0);
+      return;
+    }
     if (id === 'blog') {
       const el = document.getElementById('newsletter-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });

@@ -341,5 +341,103 @@ export const PRODUCTS = [
     ingredients: 'Aqua, Kaolin (Pink Clay), Rosa Damascena Flower Water, Niacinamide, Squalane, Glycerin, Allantoin, Phenoxyethanol.',
     howToUse: 'Apply an even layer to clean, dry skin. Relax for 10-15 minutes until clay is semi-dry. Rinse thoroughly with lukewarm water.',
     size: '100 g'
+  },
+  // SPECIAL LIMITED-TIME COMBO OFFERS (30%–35% OFF)
+  {
+    id: 'combo-1',
+    brand: 'Bloom Essentials',
+    name: 'Glass Skin Radiance Duo',
+    category: 'combos',
+    comboType: 'Duo Set (2 Items)',
+    price: 840,
+    oldPrice: 1294,
+    discount: '35% OFF',
+    savings: 'Save ₹454',
+    rating: 4.9,
+    reviewCount: '1.4k',
+    isBestseller: false,
+    isCombo: true,
+    badge: '35% OFF LIMITED DEAL',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85',
+    includes: [
+      "L'Oréal Paris Revitalift 1.5% Hyaluronic Acid Serum (30ml)",
+      'Dot & Key Vitamin C Sorbet Glow Moisturizer (50ml)'
+    ],
+    description: 'The ultimate viral 2-step radiance ritual. Pure multi-depth hyaluronic acid serum quenches thirst across all dermal layers, while antioxidant-rich Vitamin C sorbet seals in luminous hydration and fades dark spots for an authentic glass-skin glow.',
+    benefits: [
+      'Multi-depth hydration & instant dewy glow',
+      'Fades dullness & evens skin tone in 7 days',
+      'Dermatologist-tested synergistic pairing',
+      'Free luxury Bloom travel pouch included'
+    ],
+    ingredients: "Serum: Pure Hyaluronic Acid (1.5%), Glycerin, Calcium Pantothenate. Moisturizer: Kakadu Plum, Ethyl Ascorbic Acid, Blood Orange, Sodium Hyaluronate.",
+    howToUse: 'Step 1: Pat 3-4 drops of Hyaluronic Serum onto cleansed, damp skin. Step 2: Seal moisture with a dime-sized amount of Vitamin C Sorbet Moisturizer.',
+    size: '30ml + 50ml'
+  },
+  {
+    id: 'combo-2',
+    brand: 'Bloom Artistry',
+    name: 'Velvet Matte Glam Trio',
+    category: 'combos',
+    comboType: 'Trio Set (3 Items)',
+    price: 1135,
+    oldPrice: 1697,
+    discount: '33% OFF',
+    savings: 'Save ₹562',
+    rating: 4.8,
+    reviewCount: '980',
+    isBestseller: false,
+    isCombo: true,
+    badge: '33% OFF SPECIAL DEAL',
+    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=85',
+    includes: [
+      'Lakmé 9 to 5 Primer+ Matte Pore Minimizer (30g)',
+      'Maybelline Fit Me Matte Foundation (30ml)',
+      'Maybelline Super Stay 16HR Matte Lipstick (5ml)'
+    ],
+    description: 'The complete 16-hour transfer-proof full face glam set. Pore-blurring primer creates an ultra-smooth silk canvas, breathable micro-powder foundation evens skin tone with natural matte coverage, and saturated liquid lipstick locks vibrant color without drying.',
+    benefits: [
+      'Up to 16 hours smudge-proof matte hold',
+      'Pore-blurring primer & breathable medium coverage',
+      'High-intensity one-swipe lip pigmentation',
+      'Free precision teardrop makeup sponge included'
+    ],
+    ingredients: 'Primer: Dimethicone, Silica, Tocopheryl Acetate. Foundation: Aqua, Nylon-12, Isododecane, Disteardimonium Hectorite. Lipstick: Dimethicone, Trimethylsiloxysilicate, Pure Color Pigments.',
+    howToUse: 'Step 1: Apply primer across T-zone. Step 2: Blend foundation with damp sponge. Step 3: Glide matte lipstick across lips and allow 2 minutes to set.',
+    size: '30g + 30ml + 5ml'
+  },
+  {
+    id: 'combo-3',
+    brand: 'Bloom Botanics',
+    name: 'Botanical Hair & Body Revive Set',
+    category: 'combos',
+    comboType: 'Trio Set (3 Items)',
+    price: 1012,
+    oldPrice: 1447,
+    discount: '30% OFF',
+    savings: 'Save ₹435',
+    rating: 4.7,
+    reviewCount: '820',
+    isBestseller: false,
+    isCombo: true,
+    badge: '30% OFF SPECIAL DEAL',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=85',
+    includes: [
+      'Mamaearth Onion Seed Hair Root Oil (150ml)',
+      'Dove Deep Moisture Nourishing Body Wash (450ml)',
+      'Bloom Camellia Repair Leave-in Hair Serum (100ml)'
+    ],
+    description: 'Complete head-to-toe restorative selfcare ritual. Sulfur-rich onion oil strengthens hair follicles and reduces hair fall, microbiome-renewing body wash drenches skin in 24hr moisture, and cold-pressed camellia gloss serum locks in mirror shine.',
+    benefits: [
+      'Arrests hair breakage & stimulates root vitality',
+      'Deeply replenishes skin lipid barrier in one shower',
+      '24-hour frizz control and heat protection up to 230°C',
+      'Toxin-free, paraben-free & 100% cruelty-free'
+    ],
+    ingredients: 'Hair Oil: Onion Seed Oil, Redensyl, Bhringraj, Almond Oil. Body Wash: Cocamidopropyl Betaine, MicroMoisture Serum, Lauric Acid. Hair Serum: Camellia Japonica Seed Oil, Hydrolyzed Keratin.',
+    howToUse: 'Step 1: Massage onion oil into scalp 1 hour before wash. Step 2: Cleanse body with luxurious Dove lather. Step 3: Apply 1-2 pumps of Camellia serum to damp hair lengths.',
+    size: '150ml + 450ml + 100ml'
   }
 ];
+
+export const COMBO_OFFERS = PRODUCTS.filter(p => p.isCombo);

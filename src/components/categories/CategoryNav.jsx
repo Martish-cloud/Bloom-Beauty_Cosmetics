@@ -14,6 +14,13 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
 
   const handleCategoryClick = (id) => {
     onSelectCategory(id);
+    if (id === 'offers' || id === 'gift-sets') {
+      const el = document.getElementById('combo-offers-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
     const el = document.getElementById('bestsellers-section');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });

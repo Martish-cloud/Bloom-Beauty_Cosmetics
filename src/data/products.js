@@ -1,0 +1,275 @@
+export const PRODUCTS = [
+  // 6 Core Bestsellers from Reference Image
+  {
+    id: 'prod-1',
+    brand: 'Minimalist',
+    name: 'Niacinamide 10% Serum',
+    category: 'skincare',
+    price: 599,
+    oldPrice: 699,
+    discount: '14% OFF',
+    rating: 4.7,
+    reviewCount: '2.1k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
+    description: 'A pure, high-potency 10% Niacinamide (Vitamin B3) serum formulated with Zinc PCA to balance sebum activity, minimize open pores, reduce redness, and improve skin texture.',
+    benefits: [
+      'Reduces acne marks & hyperpigmentation',
+      'Minimizes enlarged pores & controls excess sebum',
+      'Strengthens skin barrier with Zinc & Aloe juice',
+      'Non-sticky, fast-absorbing lightweight formula'
+    ],
+    ingredients: 'Aloe Vera Juice, Niacinamide (10%), Dimethyl Isosorbide, Propanediol, Ethoxydiglycol, Zinc PCA, Phenoxyethanol, Ethylhexylglycerin, Hydroxyethylcellulose, Pullulan, Xanthan Gum.',
+    howToUse: 'Apply 2-3 drops onto cleansed face after toning. Pat gently until absorbed. Follow with moisturizer and sunscreen during the day.',
+    size: '30 ml / 1.0 fl. oz.'
+  },
+  {
+    id: 'prod-2',
+    brand: 'Lakmé',
+    name: '9 to 5 Primer+ Matte',
+    category: 'makeup',
+    price: 499,
+    oldPrice: 599,
+    discount: '17% OFF',
+    rating: 4.5,
+    reviewCount: '1.8k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80',
+    description: 'A lightweight perfecting primer that blurs pores, evens skin tone, and creates a silky smooth matte canvas that holds makeup fresh and crease-free for up to 16 hours.',
+    benefits: [
+      'Seamless pore-blurring matte finish',
+      'Extends foundation wear for up to 16 hours',
+      'Silky non-greasy gel-cream texture',
+      'Suitable for all Indian skin tones'
+    ],
+    ingredients: 'Cyclopentasiloxane, Dimethicone Crosspolymer, Silica, Tocopheryl Acetate (Vitamin E), Isododecane, Caprylyl Glycol.',
+    howToUse: 'Dot a pea-sized amount onto the T-zone and cheeks after moisturizing. Blend outward using fingers before applying foundation.',
+    size: '30 g'
+  },
+  {
+    id: 'prod-3',
+    brand: 'The Ordinary',
+    name: 'Hyaluronic Acid 2%',
+    category: 'skincare',
+    price: 699,
+    oldPrice: 799,
+    discount: '13% OFF',
+    rating: 4.6,
+    reviewCount: '3.2k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=600&q=80',
+    description: 'A hydration-support formula featuring multi-depth Hyaluronic Acid combined with Vitamin B5 to deliver intense multi-depth hydration and plump skin for a supple, dewy glow.',
+    benefits: [
+      'Multi-depth hydration across dermal layers',
+      'Plumps skin appearance & softens fine dehydration lines',
+      'Fortified with soothing Provitamin B5',
+      'Clean, oil-free, vegan formula'
+    ],
+    ingredients: 'Aqua (Water), Sodium Hyaluronate, Pentylene Glycol, Propanediol, Sodium Hyaluronate Crosspolymer, Panthenol, Ahnfeltia Concinna Extract, Glycerin, Trisodium Ethylenediamine Disuccinate.',
+    howToUse: 'Apply a few drops morning and evening before creams. Best applied to damp skin for maximum moisture capture.',
+    size: '30 ml'
+  },
+  {
+    id: 'prod-4',
+    brand: 'Maybelline',
+    name: 'Fit Me Matte Foundation',
+    category: 'makeup',
+    price: 549,
+    oldPrice: 699,
+    discount: '21% OFF',
+    rating: 4.4,
+    reviewCount: '2.8k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
+    description: 'Iconic liquid foundation with micro-powders that control shine and blur pores for a natural, seamless matte finish. Available in shades tailor-made for warm & neutral undertones.',
+    benefits: [
+      'Natural seamless matte finish',
+      'Pore-minimizing micro-powder technology',
+      'Breathable, medium buildable coverage',
+      'Dermatologist & allergy tested, non-comedogenic'
+    ],
+    ingredients: 'Aqua/Water, Cyclohexasiloxane, Nylon-12, Isododecane, Alcohol Denat., Cyclopentasiloxane, PEG-10 Dimethicone, Cetyl PEG/PPG-10/1 Dimethicone, PEG-20, Polyglyceryl-4 Isostearate, Disteardimonium Hectorite.',
+    howToUse: 'Apply to face and blend smoothly with fingertips, beauty sponge, or foundation brush starting from center of face outward.',
+    size: '30 ml'
+  },
+  {
+    id: 'prod-5',
+    brand: 'Dot & Key',
+    name: 'Vitamin C Moisturizer',
+    category: 'skincare',
+    price: 495,
+    oldPrice: 595,
+    discount: '17% OFF',
+    rating: 4.5,
+    reviewCount: '1.9k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80',
+    description: 'A glow-boosting sorbet moisturizer loaded with Kakadu Plum, Ethyl Ascorbic Acid, and Sicilian Blood Orange to illuminate dull complexion, fade dark spots, and seal in lasting hydration.',
+    benefits: [
+      'Boosts natural skin radiance & evens skin tone',
+      'Ultra-lightweight sorbet texture that absorbs instantly',
+      'Rich in Kakadu Plum (100x more Vit C than oranges)',
+      'Prevents sun-induced dark spots & free-radical damage'
+    ],
+    ingredients: 'Aqua, Glycerin, Ethyl Ascorbic Acid, Kakadu Plum Fruit Extract, Blood Orange Extract, Sodium Hyaluronate, Shea Butter Ethyl Esters, Tocopherol Acetate, Allantoin.',
+    howToUse: 'Dot evenly all over clean face and neck. Gently massage in upward circular motions until completely absorbed.',
+    size: '50 ml'
+  },
+  {
+    id: 'prod-6',
+    brand: 'Mamaearth',
+    name: 'Onion Hair Oil',
+    category: 'haircare',
+    price: 399,
+    oldPrice: 499,
+    discount: '20% OFF',
+    rating: 4.4,
+    reviewCount: '2.4k',
+    isBestseller: true,
+    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80',
+    description: 'A potent blend of Onion Seed Oil, Redensyl, and natural carrier oils rich in sulfur and potassium to arrest hair fall, stimulate dormant follicles, and impart high-gloss shine.',
+    benefits: [
+      'Reduces hair fall & accelerates new hair growth',
+      'Nourishes scalp and eliminates dry flaking',
+      'Infused with Redensyl to boost follicle density',
+      'Toxin-free, silicon-free, paraben-free'
+    ],
+    ingredients: 'Sunflower Oil, Jojoba Oil, Almond Oil, Bhringraj Oil Extract, Amla Oil Extract, Gurhal Oil Extract, Onion Seed Oil, Redensyl, Brahmi Oil, Vitamin E.',
+    howToUse: 'Apply generous amount to roots and scalp. Gently massage with fingertips for 5-10 minutes. Leave on overnight or for 1 hour before shampooing.',
+    size: '150 ml'
+  },
+
+  // Additional curated products for full category exploration
+  {
+    id: 'prod-7',
+    brand: 'Bloom Atelier',
+    name: 'Rose Damascena Eau De Parfum',
+    category: 'fragrances',
+    price: 1899,
+    oldPrice: 2299,
+    discount: '17% OFF',
+    rating: 4.9,
+    reviewCount: '950',
+    isBestseller: false,
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80',
+    description: 'An intoxicating fragrance featuring Bulgarian damask rose petals, velvet pink peppercorn, luminous amber, and soft Madagascar vanilla musk.',
+    benefits: [
+      'Long-lasting sillage for over 12 hours',
+      'Artisanal formulation with hand-picked roses',
+      'Hypoallergenic & IFRA certified luxury scent'
+    ],
+    ingredients: 'Alcohol Denat., Parfum/Fragrance, Aqua, Rosa Damascena Flower Oil, Linalool, Citronellol, Geraniol, Coumarin.',
+    howToUse: 'Spritz onto pulse points: neck, wrists, and collarbone from a distance of 15 cm.',
+    size: '50 ml'
+  },
+  {
+    id: 'prod-8',
+    brand: 'Bloom Botanics',
+    name: 'Camellia Repair Hair Serum',
+    category: 'haircare',
+    price: 649,
+    oldPrice: 799,
+    discount: '19% OFF',
+    rating: 4.8,
+    reviewCount: '1.4k',
+    isBestseller: false,
+    image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80',
+    description: 'Feather-light leave-in gloss serum enriched with cold-pressed Japanese Camellia seed oil and keratin peptides to tame frizz and protect against heat styling up to 230°C.',
+    benefits: [
+      'Instant mirror-like glass hair shine',
+      '24-hour humidity & frizz resistance',
+      'Heat protection up to 230°C'
+    ],
+    ingredients: 'Cyclopentasiloxane, Camellia Japonica Seed Oil, Argania Spinosa Kernel Oil, Hydrolyzed Keratin, Tocopheryl Acetate, Fragrance.',
+    howToUse: 'Rub 1-2 pumps between palms and distribute evenly through towel-dried or dry mid-lengths and ends.',
+    size: '100 ml'
+  },
+  {
+    id: 'prod-9',
+    brand: 'Bloom Luxe',
+    name: 'Velvet Matte Lip Jewel - Rouge Rose',
+    category: 'makeup',
+    price: 699,
+    oldPrice: 899,
+    discount: '22% OFF',
+    rating: 4.7,
+    reviewCount: '1.7k',
+    isBestseller: false,
+    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80',
+    description: 'Ultra-pigmented, petal-soft matte lipstick enriched with French hyaluronic spheres and jojoba wax for comfortable weightless wear that never dries out lips.',
+    benefits: [
+      'Transfer-resistant for up to 10 hours',
+      'Intense one-stroke color payoff',
+      'Non-drying moisture barrier'
+    ],
+    ingredients: 'Dimethicone, Synthetic Wax, Jojoba Esters, Hyaluronic Acid Spheres, Kaolin, CI 77891, CI 15850, CI 77491.',
+    howToUse: 'Outline lips with tip of bullet and fill in from center towards the corners.',
+    size: '3.8 g'
+  },
+  {
+    id: 'prod-10',
+    brand: 'Bloom Pure',
+    name: 'Ceramide Barrier Recovery Cream',
+    category: 'skincare',
+    price: 749,
+    oldPrice: 899,
+    discount: '17% OFF',
+    rating: 4.9,
+    reviewCount: '2.6k',
+    isBestseller: false,
+    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80',
+    description: 'A comforting moisture barrier cream packed with 5 essential ceramides, oat beta-glucan, and colloidal oatmeal to calm stressed, sensitized skin.',
+    benefits: [
+      'Clinically repairs damaged skin barrier in 3 days',
+      'Calms redness, irritation, and flaking',
+      'Fragrance-free & non-comedogenic'
+    ],
+    ingredients: 'Aqua, Glycerin, Caprylic/Capric Triglyceride, Ceramide NP, Ceramide AP, Ceramide EOP, Phytosphingosine, Cholesterol, Avena Sativa (Oat) Kernel Flour.',
+    howToUse: 'Smooth generously over face and neck as the final step in your skincare routine.',
+    size: '80 ml'
+  },
+  {
+    id: 'prod-11',
+    brand: 'Bloom Glow',
+    name: 'Rosewater & Peony Sheet Mask (Pack of 5)',
+    category: 'face-masks',
+    price: 449,
+    oldPrice: 599,
+    discount: '25% OFF',
+    rating: 4.6,
+    reviewCount: '820',
+    isBestseller: false,
+    image: 'https://images.unsplash.com/photo-1512290900672-1f5076ebf3df?auto=format&fit=crop&w=600&q=80',
+    description: 'Biodegradable bamboo microfiber sheet masks soaked in fresh botanical essence with damask rosewater, peony extracts, and trehalose.',
+    benefits: [
+      'Instant 15-minute glass glow recharge',
+      'Deeply quenches parched skin cells',
+      'Eco-friendly compostable fiber'
+    ],
+    ingredients: 'Aqua, Rosa Damascena Flower Water, Paeonia Lactiflora Root Extract, Niacinamide, Betaine, Trehalose, Allantoin.',
+    howToUse: 'Unfold mask and press onto clean skin. Relax for 15-20 minutes, then discard and tap remaining essence into skin.',
+    size: '5 Sheets x 25 ml'
+  },
+  {
+    id: 'prod-12',
+    brand: 'Bloom Body',
+    name: 'Whipped Shea & Almond Body Butter',
+    category: 'body-care',
+    price: 599,
+    oldPrice: 750,
+    discount: '20% OFF',
+    rating: 4.8,
+    reviewCount: '1.1k',
+    isBestseller: false,
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80',
+    description: 'Air-whipped decadent body soufflé infused with raw organic African shea butter, sweet almond oil, and warm floral vanilla notes.',
+    benefits: [
+      '48-hour continuous moisture protection',
+      'Leaves skin cashmere-soft and radiant',
+      'Melts into skin without greasy residue'
+    ],
+    ingredients: 'Butyrospermum Parkii (Shea) Butter, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Theobroma Cacao Seed Butter, Cetearyl Alcohol, Fragrance.',
+    howToUse: 'Massage all over body post-shower while skin is warm and slightly damp.',
+    size: '200 g'
+  }
+];
